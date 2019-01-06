@@ -2,9 +2,10 @@
   "name": "schonfinkel",
   "version": "0.1.0",
   "description": "Lightweight utilities for functional programming",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "tsc"
   },
   "keywords": [
     "fp",
@@ -13,5 +14,11 @@
     "monad"
   ],
   "author": "Edgar Dorausch",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^23.3.11",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.2"
+  }
 }
