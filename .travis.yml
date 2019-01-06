@@ -7,7 +7,7 @@ script:
  - echo "Running tests against $(node -v)..."
  - npm test
 
- jobs:
+jobs:
   include:
     - stage: Produce Coverage
       node_js: node
