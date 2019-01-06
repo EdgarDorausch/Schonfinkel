@@ -4,7 +4,6 @@
   "description": "Lightweight utilities for functional programming",
   "main": "dist/index.js",
   "scripts": {
-    "cover": "jest --coverage --coverageReporters=text-lcov",
     "test": "jest",
     "build": "tsc"
   },
