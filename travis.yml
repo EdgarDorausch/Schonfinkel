@@ -4,4 +4,11 @@ node_js :
 install:
  - npm install
 script:
+ - echo "Running tests against $(node -v)..."
  - npm test
+
+ jobs:
+  include:
+    - stage: Produce Coverage
+      node_js: node
+      script: npm coverage | ./node_modules/coveralls/bin/coveralls.js
