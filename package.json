@@ -1,0 +1,17 @@
+{
+  "name": "schonfinkel",
+  "version": "0.1.0",
+  "description": "Lightweight utilities for functional programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fp",
+    "functional-programming",
+    "optionals",
+    "monad"
+  ],
+  "author": "Edgar Dorausch",
+  "license": "MIT"
+}
