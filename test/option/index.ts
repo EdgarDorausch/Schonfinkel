@@ -22,14 +22,6 @@ describe('None', () => {
         });
     });
 
-    describe('mapNoneTo', () => {
-        it('return the right instance of Some after mapping', () => {
-            const myNone = new None<number>();
-            const mappedNone = myNone.mapNoneTo(42);
-            expect(mappedNone.equals(some(42))).toBeTruthy();
-        });
-    });
-
     describe('getOrNull', () => {
         it('return null', () => {
             const myNone = new None<number>();
@@ -140,14 +132,6 @@ describe('Some', () => {
             const mySome = new Some<number>(32);
             const mappedNone = mySome.flatMap(x => new None());
             expect(mappedNone).toBeInstanceOf(None);
-        });
-    });
-
-    describe('mapNoneTo', () => {
-        it('return the right instance of Some after mapping', () => {
-            const mySome = new Some<number>(32);
-            const mappedSome = mySome.mapNoneTo(42);
-            expect(mappedSome.equals(some(32))).toBeTruthy();
         });
     });
 

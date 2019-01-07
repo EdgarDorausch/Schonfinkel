@@ -11,11 +11,6 @@ interface OptionInterface<A> {
      */
     flatMap<B>(f: Fun1<A, Option<B>>): Option<B>;
     /**
-     * If the option is `none()` it will mapped to `some(a)` otherwise
-     * the initial option/some() object is returned 
-     */
-    mapNoneTo(a: A): Some<A>;
-    /**
      * @returns `null` if `none()`; `a` if `some(a)`
      */
     getOrNull(): A|null;
@@ -68,9 +63,6 @@ export class Some<A> implements OptionInterface<A> {
     flatMap<B>(f: Fun1<A, Option<B>>): Option<B> {
         return f(this.value);
     }
-    mapNoneTo(a: A) {
-        return this;
-    }
     getOrNull() {
         return this.value;
     }
@@ -107,9 +99,6 @@ export class None<A> implements OptionInterface<A> {
     }
     flatMap<B>(f: Fun1<A, Option<B>>): Option<B> {
         return none();
-    }
-    mapNoneTo(a: A) {
-        return some(a);
     }
     getOrNull() {
         return null;
