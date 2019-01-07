@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Lightweight utilities for functional programming",
   "main": "dist/index.js",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "test": "jest",
     "build": "tsc"
@@ -21,5 +24,9 @@
     "jest": "^23.6.0",
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.2"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/EdgarDorausch/Schonfinkel"
   }
 }
