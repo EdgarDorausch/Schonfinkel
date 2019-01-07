@@ -60,7 +60,7 @@ safeGetCharUpperCase('abc', 5)
 | `getOrNull`        | `null`         | `a`          |
 | `getOrUndefined`   | `undefined`    | `a`          | |
 | `getOrElse(b)`     | `b`            | `a`          | |
-| `getOrLazyElse(f)` | `f()`          | `a`          | computes the "else" value in a lazy fashon|
+| `getOrLazyElse(f)` | `f()`          | `a`          | computes the "else" value in a lazy fashion|
 | `pick(k)`          | `none()`       | `some(a[k])` | safely get a property-value (of prop. `k`)|
 | `isNone()`         | `true`         | `false`      | |
 | `forSome(f)`       |  -             |  -           | `f` is of type `(a: A) => void`. `f` is only executed for an instance of `Some`
