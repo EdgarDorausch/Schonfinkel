@@ -4,7 +4,7 @@ Lightweight typescript utilities for functional programming
 
 ## Installation
 
-Simply install this package via [npm]()
+Simply install this package via [npm](https://www.npmjs.com/package/schonfinkel)
 ```shell
 npm i schonfinkel
 ```
