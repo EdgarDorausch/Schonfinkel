@@ -40,7 +40,7 @@ interface OptionInterface<A> {
     /**
      * `f(a)` is only executed if `Option` is a `some(a)`
      */
-    forEach(f: Fun1<A>): void;
+    forSome(f: Fun1<A>): void;
     /**
      * Compares two Options regarding to equivalence.
      * 
@@ -81,7 +81,7 @@ export class Some<A> implements OptionInterface<A> {
     isNone() {
         return false;
     }
-    forEach(f: Fun1<A>) {
+    forSome(f: Fun1<A>) {
         f(this.value);
     }
     equals(opt: Option<A>) {
@@ -118,7 +118,7 @@ export class None<A> implements OptionInterface<A> {
     isNone() {
         return true;
     }
-    forEach(f: Fun1<A>) {
+    forSome(f: Fun1<A>) {
         // Do Nothing!
     }
     equals(opt: Option<A>) {

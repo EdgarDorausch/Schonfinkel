@@ -74,12 +74,12 @@ describe('None', () => {
         });
     });
 
-    describe('forEach', () => {
+    describe('forSome', () => {
         it('callback not called', () => {
             const mockCallback = jest.fn(x => 42 + x);
 
             const myNone = new None<number>();
-            myNone.forEach(mockCallback);
+            myNone.forSome(mockCallback);
             expect(mockCallback.mock.calls.length).toBe(0);
         });
     });
@@ -190,12 +190,12 @@ describe('Some', () => {
         });
     });
 
-    describe('forEach', () => {
+    describe('forSome', () => {
         it('callback has to be called', () => {
             const mockCallback = jest.fn(x => 42 + x);
 
             const mySome = new Some<number>(32);
-            mySome.forEach(mockCallback);
+            mySome.forSome(mockCallback);
             expect(mockCallback.mock.calls.length).toBe(1);
         });
     });
