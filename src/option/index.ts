@@ -1,5 +1,7 @@
 import { Fun1, Lazy } from '../types';
 
+export * from './utils';
+
 interface OptionInterface<A> {
     /**
      * @returns `none()` if `none()`; `some(f(a))` if `some(a)`
