@@ -44,3 +44,15 @@ export function lift4<A,B,C,D,E>(f: Fun4<A,B,C,D,E>): Fun4<Option<A>,Option<B>,O
     c => optD.map(
     d => f(a,b,c,d)))))
 }
+
+export function apply<A,B>(optF: Option<Fun1<A,B>>): (optA: Option<A>|A) => Option<B> {
+  return (optA) => {
+    if (optA instanceof Some || optA instanceof None) {
+      return optF.flatMap(
+        f => optA.map(
+        a => f(a)));
+    } else {
+      return optF.map(f => f(optA));
+    }
+  }
+}
