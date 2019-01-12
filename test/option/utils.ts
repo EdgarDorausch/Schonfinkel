@@ -1,5 +1,5 @@
 import { None, some, Some, none, option } from '../../src/option';
-import { lift2, lift3, lift4, zip } from '../../src/option/utils';
+import { lift2, lift3, lift4, zip, lift1 } from '../../src/option/utils';
 
 describe('zip', () => {
   it('return {} onput input === {}', () => {
@@ -46,6 +46,23 @@ describe('zip', () => {
         c: some('c')
       });
     });
+  });
+});
+
+describe('lift1', () => {
+  const f1 = lift1((a: string) => a+'b');
+
+  it('return expected value if all inputs are instances of Some', () => {
+    expect(
+      f1(some('a'))
+        .equals(some('ab'))
+    ).toBeTruthy();
+  });
+
+  it('return none() if some inputs are instances of None', () => {
+    expect(
+      f1(none()).isNone()
+    ).toBeTruthy();
   });
 });
 

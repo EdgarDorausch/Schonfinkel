@@ -1,5 +1,5 @@
 import { Option, Some, None, none, some } from './index'
-import { Fun2, Fun3, Fun4 } from '../types';
+import { Fun1, Fun2, Fun3, Fun4 } from '../types';
 
 type OptionObject<T> = {[k in keyof T]: Option<T[k]>}
 
@@ -18,6 +18,10 @@ export function zip<T extends {}>(obj: OptionObject<T>): Option<T> {
   }
 
   return some(newObj);
+}
+
+export function lift1<A,B>(f: Fun1<A,B>): Fun1<Option<A>,Option<B>> {
+  return (optA) => optA.map(a => f(a))
 }
 
 export function lift2<A,B,C>(f: Fun2<A,B,C>): Fun2<Option<A>,Option<B>,Option<C>> {
